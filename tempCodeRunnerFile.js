@@ -1,0 +1,1 @@
+let notas = valores[i].split(" ").map(Number);

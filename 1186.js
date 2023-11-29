@@ -1,0 +1,17 @@
+const input = require('fs').readFileSync('stdin', 'utf8');
+const lines = input.split('\n');
+
+let operacao = lines.shift(); // pega a primeira linha 
+let soma = 0;
+
+for(let i = 11; i >= 0; i--){ // coluna
+    for (let j = 0; j < 12; j++) {
+        const n = parseFloat(lines[12 * i + j]);
+        if (j > 11 - i) soma += n;
+    }
+}
+
+const resultado = operacao === "S" ? soma : soma / ((144-12) / 2);
+console.log(resultado.toFixed(1));
+
+
